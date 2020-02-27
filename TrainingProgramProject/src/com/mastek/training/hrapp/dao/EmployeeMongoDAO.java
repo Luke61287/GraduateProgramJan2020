@@ -12,7 +12,6 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-
 public class EmployeeMongoDAO implements DataAccessObject<Employee> {
 	
 	MongoCollection<Document> empCollection;
