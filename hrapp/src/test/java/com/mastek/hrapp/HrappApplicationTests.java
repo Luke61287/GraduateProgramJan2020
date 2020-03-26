@@ -42,8 +42,8 @@ import com.mastek.hrapp.services.EmployeeService;
     @Autowired
     PaymentJPADAO paymentDAO;
     
-    @Autowired // spring will provide the object using IOC, dependency Injection technique
-    DepartmentJPADAO orderDAO;
+//    @Autowired // spring will provide the object using IOC, dependency Injection technique
+//    DepartmentJPADAO orderDAO;
     
     @Autowired
     JobPositionDAO jobDAO;
@@ -129,26 +129,26 @@ import com.mastek.hrapp.services.EmployeeService;
     	assertNotNull(emp, "Employee Not Added");
     }
     
-    @Test
-    void testDepartmentDAOAdd() {
-    	Department dept = new Department();
-    	dept.setdeptname("Admin");
-    	dept.setlocation("UK");
-    	dept = deptDAO.save(dept);
-    	
-    	assertNotNull(dept, "Department Not Added");
-    }
+//    @Test
+//    void testDepartmentDAOAdd() {
+//    	Department dept = new Department();
+//    	dept.setdeptname("Admin");
+//    	dept.setlocation("UK");
+//    	dept = deptDAO.save(dept);
+//    	
+//    	assertNotNull(dept, "Department Not Added");
+//    }
     
-    @Test
-    void testProjectDAOAdd() {
-    	Project Project = new Project();
-    	Project.setprojectname("NHS");
-    	Project.setcustname("UK");
-    	
-    	Project = projectDAO.save(Project);
-    	System.out.println(Project);
-    	assertNotNull(Project, "Project Not Added");
-    }
+//    @Test
+//    void testProjectDAOAdd() {
+//    	Project Project = new Project();
+//    	Project.setprojectname("NHS");
+//    	Project.setcustname("UK");
+//    	
+//    	Project = projectDAO.save(Project);
+//    	System.out.println(Project);
+//    	assertNotNull(Project, "Project Not Added");
+//    }
     
     @Test
     void testListEmployee() {
@@ -159,36 +159,36 @@ import com.mastek.hrapp.services.EmployeeService;
     	}
     }
     
-    @Test
-    void testListDepartment() {
-    	Iterable<Department> dept = deptDAO.findAll();
-    	assertNotNull(dept, "Departments not Found");
-    	for (Department department : dept) {
-    		System.out.println(department);
-    	}
-    }
+//    @Test
+//    void testListDepartment() {
+//    	Iterable<Department> dept = deptDAO.findAll();
+//    	assertNotNull(dept, "Departments not Found");
+//    	for (Department department : dept) {
+//    		System.out.println(department);
+//    	}
+//    }
     
-    @Test
-    void testListProject() {
-    	Iterable<Project> project = projectDAO.findAll();
-    	assertNotNull(project, "Projects not Found");
-    	for (Project Project : project) {
-    		System.out.println(project);
-    	}
-    }
+//    @Test
+//    void testListProject() {
+//    	Iterable<Project> project = projectDAO.findAll();
+//    	assertNotNull(project, "Projects not Found");
+//    	for (Project Project : project) {
+//    		System.out.println(project);
+//    	}
+//    }
     
-    @Test
-    void testUpdateEmployees() {
-    	Employee emp = empDAO.findById(1).get();
-    	System.out.println("Employee Fetch:"+emp);
-    	
-    	emp.setSalary(emp.getSalary()+1001);
-    	emp.setDesignation(Designation.TESTER);
-    	
-    	emp = empDAO.save(emp);
-    	
-    	System.out.println("Updated Employee:"+emp);	
-    }
+//    @Test
+//    void testUpdateEmployees() {
+//    	Employee emp = empDAO.findById(1).get();
+//    	System.out.println("Employee Fetch:"+emp);
+//    	
+//    	emp.setSalary(emp.getSalary()+1001);
+//    	emp.setDesignation(Designation.TESTER);
+//    	
+//    	emp = empDAO.save(emp);
+//    	
+//    	System.out.println("Updated Employee:"+emp);	
+//    }
     
    /* @Test
     void testDeleteEmployeeById() {
@@ -196,17 +196,17 @@ import com.mastek.hrapp.services.EmployeeService;
     	// empDAO.deleteById(25); // deletes by Id.
     }*/
     
-    @Test
-    void testAssignEmployeeToDepartment() {
-    Employee emp = empSvc.assignEmployeeToDepartment(1,17);
-    assertNotNull(emp.getCurrentDepartment(),"Department Not Assigned");
-    }
-    
-    @Test
-    void testAssignEmployeeToProject() {
-    	Employee emp = empSvc.assignEmployeeToProject(2,33);
-    	assertTrue(emp.getProjectsAssigned().size()>0,"Project Not Assigned");
-    }
+//    @Test
+//    void testAssignEmployeeToDepartment() {
+//    Employee emp = empSvc.assignEmployeeToDepartment(1,17);
+//    assertNotNull(emp.getCurrentDepartment(),"Department Not Assigned");
+//    }
+//    
+//    @Test
+//    void testAssignEmployeeToProject() {
+//    	Employee emp = empSvc.assignEmployeeToProject(2,33);
+//    	assertTrue(emp.getProjectsAssigned().size()>0,"Project Not Assigned");
+//    }
     
     
     @Test
@@ -232,18 +232,18 @@ import com.mastek.hrapp.services.EmployeeService;
     	}
     }
     
-    @Test
-    void testApplyForJobPositions() {
-    	int jobId=124;
-    	int empno=2;
-    	JobPosition jp = empSvc.applyForJobPosition(jobId, empno);
-   
-    	assertNotNull(jp,"job not applied");
-   
-    	System.out.println("Applications for JOB ID:"+jobId);
-    	for (Employee applicant : jp.getApplicants()) {
-    		System.out.println(applicant);
-    	}   
-    }
+//    @Test
+//    void testApplyForJobPositions() {
+//    	int jobId=124;
+//    	int empno=2;
+//    	JobPosition jp = empSvc.applyForJobPosition(jobId, empno);
+//   
+//    	assertNotNull(jp,"job not applied");
+//   
+//    	System.out.println("Applications for JOB ID:"+jobId);
+//    	for (Employee applicant : jp.getApplicants()) {
+//    		System.out.println(applicant);
+//    	}   
+//    }
     
 }
